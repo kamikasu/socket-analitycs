@@ -4,7 +4,7 @@ services:
   sockect-analitycs:
     build: .
     environment:
-      - ENV=LOCAL
+      - ENV=prod
       - CONTAINER_ROLE=app
     ports:
       - 3100:3100
