@@ -1,0 +1,22 @@
+name: hipodromo-websocket
+excludes:
+ - src/node_modules
+services:
+  app:
+    type: node:16
+    ssl: true
+    port: 3100
+    scanner: false
+    build: 
+      - cd /app/src && yarn install
+      - cd /app/src && yarn run dump:env
+      - cd /app/src && yarn run build
+    command: cd /app/src && yarn run start
+    overrides:
+      environment:
+        DEBUG: '*'
+      volumes:
+        - ./src/:/app/src:cached
+proxy:
+  app:
+    - hipodromo-websocket.lndo.site:3100

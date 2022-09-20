@@ -1,0 +1,26 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn tsc",
+    "dump:env": "cp .env.example .env",
+    "dump:env:prod": "cp .env.prod .env",
+    "start": "nodemon -e ts --exec \"yarn run build && node dist/\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "socket.io": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.8",
+    "k6": "^0.0.0",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.7.4"
+  }
+}
